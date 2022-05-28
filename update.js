@@ -56,7 +56,7 @@ async function main() {
 */
 
   //! 3. 여러건 수정 updateMany
-  /*
+
   const filter = {
     name: '테스트',
   };
@@ -64,19 +64,23 @@ async function main() {
   const updateDocument = {
     // ? 필드 값 자체가 객체 이고, 객체의 프로퍼티가 배열인 경우
     // * v1.
+    // <예시 DB 데이터>
     // inner : object, bucket: array
     //   inner = {
     //       bucket: [1,2,3]
     //   }
+
     // $push: { 'inner.bucket': '두번째 데이터' },
 
     // ? 필드 값 자체가 배열 이고, 배열의 요소가 객체인 경우
     // * v2.
     // inner : array, bucket: array
+    // <예시 DB 데이터>
     // inner = [{
     //     bucket: [1,2,3],
     //     flag: '하북'
     // }]
+
     $push: { 'inner.$[item].bucket': '한번에 모두업데이트?' },
   };
 
@@ -93,9 +97,10 @@ async function main() {
   const result = await collection.updateMany(filter, updateDocument, options);
   //   const result = await collection.updateMany(filter, updateDocument);
   console.log(result);
-*/
+  // */
 
   //! 4. upsert (업데이트하거나 없으면 생성)
+  /*
   const query = { name: '킹하북' };
   const update = {
     $set: {
@@ -107,6 +112,8 @@ async function main() {
 
   const result = await collection.updateOne(query, update, option);
   console.log(result);
+
+  */
 
   // 연결 종료
   //   client.close();
