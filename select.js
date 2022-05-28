@@ -1,9 +1,10 @@
-/**
- * 몽고디비만 사용하여 데이터 접근
- */
-
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
+
+/**
+ * 몽고디비만 사용하여 데이터 접근
+ * [ 데이터 조회 ]
+ */
 
 // or as an es module:
 // import { MongoClient } from 'mongodb'
