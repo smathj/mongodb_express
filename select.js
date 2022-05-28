@@ -19,10 +19,10 @@ const dbName = process.env.DB_DATABASE;
 
 //  최초 실행 함수
 async function main() {
-  console.log('[System] 최초 실행 함수 실행');
+  console.log('[System-Select] 최초 실행 함수 실행');
 
   await client.connect(); // 몽고디비 클라이언트 연결
-  console.log('[System] 몽고디비에 연결완료');
+  console.log('[System-Select] 몽고디비에 연결완료');
   const db = client.db(dbName);
 
   // 콜렉션(테이블) 지정
@@ -74,4 +74,4 @@ async function main() {
 main();
 //   .then(console.log)
 //   .catch(console.error)
-//   .finally(() => client.close());
+// .finally(() => client.close());
